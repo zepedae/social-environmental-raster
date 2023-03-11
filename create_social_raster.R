@@ -81,8 +81,9 @@ vars_geom <- get_acs(geography = "block group", state = "IL",
 # create a SpatialPointsDataFrame to be rasterized
 vars_geom <- vars_geom[na.omit(vars_geom$geometry), 
                        !colnames(vars_geom)== "GEOID"] # removes two empty geos
-spdf <- sf::as_Spatial(st_geometry(vars_geom[, c("geometry", "ID")]), IDs = as.character(vars_geom$ID))
-data <- vars_geom[, !colnames(vars_geom) == "geometry"]
+spdf <- sf::as_Spatial(st_geometry(vars_geom[, c("geometry", "ID")]), 
+                       IDs = as.character(vars_geom$ID))
+data <- st_drop_geometry(vars_geom)
 #data <- data %>% mutate(row_names = unique(as.integer(ID))) # rasterize needs row_names
 
 sp_df <- sp::SpatialPolygonsDataFrame(spdf, data = data)
@@ -91,7 +92,7 @@ sp_df <- spTransform(sp_df, CRS("+init=epsg:4269"))
 
 
 
-########################  Rasterize SPDF   ########################
+########################  Rasterize SPDF   ##########################
 
 # create raster template that has same approximate dimensions as SPDF
 extent <- bbox(sp_df)
