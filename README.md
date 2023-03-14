@@ -1,29 +1,35 @@
-# Create a Raster with Social and Environmental Characteristic Layers
+# Create a Raster with Human Social and Environmental Characteristics
 
 ## Social Characteristics Using US Census Data
+### create_social_rast.R
 The social raster contains data on the socioeconomic and demographic characteristics
-of people living in the Chicago Metropolitan Area. Using the R package, tidycensus 
-(Walker and Herman 2023).
+of people living in the Chicago Metropolitan Area. This file extracts American
+Community Survey data on the income, race, and population density of designated 
+areas using the tidycensus package. After extracting at the Census block group 
+level, it rasterizes the spatial data to a resolution of 30 $m^{2}$.
 
-The data was extracted at the Census block group level and then rasterized to a 
-resolution of 30 m^2 using the raster packaage in R (Hijmans 2022).
+### interpolate_social_rast.R
+In urban areas, social system characteristics influence environmental 
+characteristics beyond the residents' private property. For instance, pollutant 
+concentrations tends to be negatively associated with an area's median income. 
+Due to this spatial autocorrelation in the effect of human social characteristics 
+on the environment, I conducted a kriging interpolation to estimate the social 
+characteristics of areas with no human population e.g. city parks. Note: The 
+interpolation is computationally intensive and was therefore performed on a 
+supercomputing cluster.
+
 
 ## Environmental Characteristics Using CMAP Data
+### create_env_rast.R
+Using shapefile containing land use data from the Chicago Metropolitan Agency for 
+Planning previously rasterized to a 300 $m^{2}$ resolution in QGIS, this file
+loops over each cell in the raster calculating the proportion of natural habitat, 
+disturbed habitat, and agriculture in a 1 km radius. A new environmental raster
+brick is then generated with each layer containing the proportions of its habitat 
+type.
 
 
-
-@Manual{,
-  title = {tidycensus: Load US Census Boundary and Attribute Data as 'tidyverse' and 'sf'-Ready Data Frames},
-  author = {Kyle Walker and Matt Herman},
-  year = {2023},
-  note = {R package version 1.3.2},
-  url = {https://walker-data.com/tidycensus/},
-}
-
-@Manual{,
-    title = {raster: Geographic Data Analysis and Modeling},
-    author = {Robert J. Hijmans},
-    year = {2022},
-    note = {R package version 3.5-29},
-    url = {https://CRAN.R-project.org/package=raster},
-  }
+## Final Raster
+### combine_rasters.R
+This file reprojects, resamples, and combines the social and environmental rasters
+into one raster brick containing the social and environmental layers.
