@@ -39,4 +39,8 @@ type.
 ## Final Raster
 ### combine_rasters.R
 This file reprojects, resamples, and combines the social and environmental rasters
-into one raster brick containing the social and environmental layers.
+into one raster brick containing the social and environmental layers. Note: High
+resolution human-population density data was needed for the analysis hence the 
+difference in environmental and social raster resolution. The environmental raster
+was resampled at the social raster resolution to ensure that social data precision 
+wasn't compromised.
