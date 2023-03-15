@@ -36,8 +36,9 @@ for(x in 1:5){
 
 
 
-##################   Save Interpolated Rastern  ##################
-writeRaster(socialRaster, filename = "social_rastInt.tif", options="INTERLEAVE=BAND", 
+##################   Save Interpolated Raster  ##################
+
+writeRaster(socialRaster, filename = "social_rast_int.tif", options="INTERLEAVE=BAND", 
             overwrite = TRUE)
-writeRaster(socialRaster, filename = "social_rastInt.grd", format="raster", 
+writeRaster(socialRaster, filename = "social_rast_int.grd", format="raster", 
             options="INTERLEAVE=BAND", overwrite = TRUE)
