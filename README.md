@@ -1,7 +1,8 @@
 # Create a Raster with Human Social and Environmental Characteristics
 
-This project is part of a larger study examining the human social characteristics and environmental characteristics shaping human-coyote interactions in the Chicago Metropolitan Area. These files use social data collected by the American Community Survey (US Census) and environmental data produced by the Chicago Metrpolitan Agency for Planning.
+This project is part of a larger study examining the human social characteristics and environmental characteristics shaping human-coyote interactions in the Chicago Metropolitan Area. These files use social data collected by the American Community Survey (US Census) and environmental data from the Chicago Metrpolitan Agency for Planning (https://www.cmap.illinois.gov/data/land-use/inventory).
 
+The figure below shows a version of this raster that was used in the analysis of coyote behavioral data as part of my research on human-coyote interactions at UC Davis.
 <img width="467" alt="image" src="https://user-images.githubusercontent.com/112019669/224872768-ba64b051-4af0-4a02-acfa-b0818710f4a4.png">
 
 
