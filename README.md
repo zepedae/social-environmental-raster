@@ -7,7 +7,7 @@ The figure below shows a version of this raster that was used in an analysis of 
 <img width="467" alt="image" src="https://user-images.githubusercontent.com/112019669/224872768-ba64b051-4af0-4a02-acfa-b0818710f4a4.png">
 
 
-## Social Characteristics Using US Census Data
+## Social Raster Using US Census Data
 ### create_social_rast.R
 The social raster contains data on the socioeconomic and demographic characteristics
 of people living in the Chicago Metropolitan Area. This file extracts American
@@ -26,7 +26,7 @@ interpolation is computationally intensive and was therefore performed on a
 supercomputing cluster.
 
 
-## Environmental Characteristics Using CMAP Data
+## Environmental Raster Using CMAP Data
 ### create_env_rast.R
 Using a shapefile containing land use data from the Chicago Metropolitan Agency for 
 Planning previously rasterized to a 300 $m^{2}$ resolution in QGIS, this file
