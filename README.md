@@ -4,7 +4,7 @@ This project is part of a larger study examining the human social characteristic
 
 The figure below shows a version of this raster that was used in an analysis of coyote behavioral data (Zepeda et al. 2023).
 
-<img width="467" alt="image" src="https://user-images.githubusercontent.com/112019669/224872768-ba64b051-4af0-4a02-acfa-b0818710f4a4.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/112019669/224872768-ba64b051-4af0-4a02-acfa-b0818710f4a4.png">
 
 
 ## Social Raster Using US Census Data
